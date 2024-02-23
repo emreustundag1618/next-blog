@@ -1,10 +1,9 @@
-import React from 'react';
 import styles from "./menu.module.css";
 
-const Manu = () => {
+const Menu = () => {
   return (
-    <div className={styles.container}>Manu</div>
+    <div className={styles.container}>Menu</div>
   )
 }
 
-export default Manu
+export default Menu
