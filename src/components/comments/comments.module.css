@@ -1,0 +1,61 @@
+.container {
+  margin-top: 60px;
+}
+
+.title {
+    color: var(--softTextColor);
+    margin-bottom: 30px;
+}
+
+.write {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input {
+    padding: 15px;
+    width: 100%;
+}
+
+.button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: crimson;
+    color: white;
+    font-size: 16px;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 40px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.userContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatarContainer {
+  position: relative;
+  height: 35px;
+  width: 35px;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 1px solid gray;
+  object-fit: cover;
+}

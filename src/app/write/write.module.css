@@ -1,0 +1,63 @@
+.container {
+}
+
+.inputTitle {
+  padding: 50px;
+  font-size: 64px;
+  background-color: transparent;
+  color: #b3b3b1;
+  border: none;
+  outline: none; /* This is for focus line */
+}
+
+.inputTitle::placeholder {
+  color: #b3b3b1;
+}
+
+.editor {
+  display: flex;
+  gap: 20px;
+  height: 300px;
+  position: relative;
+}
+.button,
+.addButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  border: 1px solid var(--textColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.addButton {
+  border-color: #1e8917;
+}
+.add {
+  display: flex;
+  gap: 20px;
+  background-color: var(--bg);
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  left: 50px;
+}
+.quillTextArea {
+  width: 100%;
+}
+
+.publish {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #1e8917;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}

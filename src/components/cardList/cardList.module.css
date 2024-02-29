@@ -1,2 +1,8 @@
 .container {
+    flex: 5;
+}
+
+.title {
+    margin: 50px 0;
+    font-size: 32px;
 }
