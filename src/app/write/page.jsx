@@ -3,7 +3,6 @@
 import styles from "./write.module.css";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -16,6 +15,12 @@ import {
 import { app } from "@/utils/firebase";
 
 const storage = getStorage(app);
+
+// Only import ReactQuill when window is defined
+let ReactQuill;
+if (typeof window !== "undefined") {
+  ReactQuill = require("react-quill");
+}
 
 const WritePage = () => {
   const { status: sessionStatus } = useSession();
@@ -99,8 +104,6 @@ const WritePage = () => {
 
     console.log(res);
   };
-
-  const ReactQuill = typeof window !== "undefined" ? require("react-quill") : null;
 
   return (
     <div className={styles.container}>
