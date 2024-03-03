@@ -2,6 +2,7 @@ import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
 import Card from "../card/Card";
 
+//TODO: maybe &featured=true like endpoint can be added later with prisma model change
 const getPosts = async (page, cat) => {
   // the final best practise is a valid caching. here for testing purpose
   const res = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`, {
