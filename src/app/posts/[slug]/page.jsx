@@ -43,7 +43,7 @@ const SinglePage = async ({ params }) => {
         </div>
         {post.img && (
           <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+            <Image src={post.img} alt="" fill className={styles.image} />
           </div>
         )}
       </div>

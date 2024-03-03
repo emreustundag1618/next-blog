@@ -5,7 +5,7 @@
   padding: 50px;
   font-size: 64px;
   background-color: transparent;
-  color: #b3b3b1;
+  color: var(--textColor);
   border: none;
   outline: none; /* This is for focus line */
 }

@@ -6,9 +6,11 @@ export const GET = async (req, { params }) => {
   const { slug } = params;
 
   try {
+    // when refresh the post page views increases by 1
     // or ...where: {slug}... is the same with ...where: {slug: slug}...
-    const post = await prisma.post.findUnique({
+    const post = await prisma.post.update({
       where: { slug },
+      data: {views: {increment: 1}},
       include: {
         user: true
       }
@@ -21,3 +23,4 @@ export const GET = async (req, { params }) => {
     );
   } 
 };
+
