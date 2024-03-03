@@ -2,9 +2,9 @@ import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
 import Card from "../card/Card";
 
-const getPosts = async (page) => {
+const getPosts = async (page, cat) => {
   // the final best practise is a valid caching. here for testing purpose
-  const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
+  const res = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`, {
     cache: "no-store",
   });
 
@@ -15,20 +15,23 @@ const getPosts = async (page) => {
   return res.json();
 };
 
-const CardList = async ({page}) => {
-  const data = await getPosts(page);
-  console.log(data)
+const CardList = async ({page, cat}) => {
+  const {posts, count} = await getPosts(page, cat);
+
+  const POST_PER_PAGE = 3;
+
+  const hasPrev = POST_PER_PAGE * (page - 1) > 0;
+  const hasNext = POST_PER_PAGE * page < count;
+  
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Recent Posts</h2>
       <div className={styles.posts}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {posts?.map(item => (
+          <Card key={item.id} item={item}/>
+        ))}
       </div>
-      <Pagination />
+      <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext}/>
     </div>
   );
 };

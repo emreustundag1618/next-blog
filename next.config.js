@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+// For external image links do this
+const nextConfig = {
+    images: {
+        domains: ["lh3.googleusercontent.com"]
+    }
+}
 
 module.exports = nextConfig

@@ -69,11 +69,12 @@ model Category {
 }
 
 model Post {
-  id        String   @id @default(cuid()) @map("_id")
-  createdAt DateTime @default(now())
+  id        String    @id @default(cuid()) @map("_id")
+  createdAt DateTime  @default(now())
   slug      String    @unique
   title     String
   desc      String
+  content   String?
   img       String?
   views     Int       @default(0)
   catSlug   String
