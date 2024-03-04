@@ -16,15 +16,11 @@ import { app } from "@/utils/firebase";
 
 const storage = getStorage(app);
 
-// Only import ReactQuill when window is defined
-let ReactQuill;
-if (typeof window !== "undefined") {
-  ReactQuill = require("react-quill");
-}
-
 const WritePage = () => {
   const { status: sessionStatus } = useSession();
   const router = useRouter();
+
+  const ReactQuill = dynamic(() => import('react-quill'), {ssr: false})
 
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
